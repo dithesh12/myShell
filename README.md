@@ -1,6 +1,17 @@
 # Linux Shell
 
-A Unix-like command-line shell developed in C that supports command execution using Linux system calls. This project demonstrates process creation, command parsing, and operating system fundamentals.
+A lightweight Unix-like command-line shell developed in C that executes Linux commands using system calls. The project demonstrates process creation, command execution, and process synchronization in a Linux environment.
+
+## Project Structure
+
+```text
+myShell/
+├── README.md
+├── LICENSE
+├── .gitignore
+├── shell.c
+└── screenshots/
+```
 
 ## Features
 
@@ -8,32 +19,32 @@ A Unix-like command-line shell developed in C that supports command execution us
 * Process creation using `fork()`
 * Command execution using `execvp()`
 * Parent-child process synchronization using `wait()`
-* Basic command parsing and execution
-* Lightweight and easy-to-understand implementation
+* Command parsing and argument handling
+* Interactive command-line interface
 
 ## Technologies Used
 
-* C Programming
+* C
 * Linux System Programming
-* GCC Compiler
+* GCC
 * Linux Terminal
 
-## Operating System Concepts Used
+## Core Concepts
 
 * Process Management
 * System Calls
 * Parent and Child Processes
-* Command Interpretation
+* Command Parsing
 * Process Synchronization
 
-## How It Works
+## Workflow
 
-1. The shell waits for user input.
-2. The entered command is parsed into arguments.
-3. A child process is created using `fork()`.
-4. The child process executes the command using `execvp()`.
-5. The parent process waits for the child process to finish using `wait()`.
-6. The shell prompts the user for the next command.
+1. Accept command input from the user.
+2. Parse the command and arguments.
+3. Create a child process using `fork()`.
+4. Execute the command using `execvp()`.
+5. Wait for the child process to complete using `wait()`.
+6. Display the shell prompt for the next command.
 
 ## Example
 
@@ -42,8 +53,7 @@ myshell> pwd
 /home/user
 
 myshell> ls
-file1.txt
-file2.txt
+Documents Downloads
 
 myshell> mkdir test
 
@@ -66,15 +76,24 @@ gcc shell.c -o myshell
 
 ## Learning Outcomes
 
-* Understanding Linux process creation
+* Understanding Linux process creation and management
 * Working with system calls
-* Implementing command execution
-* Building a basic command-line interpreter
-* Applying operating system concepts in a practical project
+* Executing commands using child processes
+* Building a command-line interpreter
+* Applying Operating System concepts in practice
 
-## Future Enhancements
+## Current Status
 
-* Pipe (`|`) support
+### Implemented
+
+* Command execution
+* Process creation using `fork()`
+* Command execution using `execvp()`
+* Process synchronization using `wait()`
+
+### Planned Enhancements
+
+* Pipe support (`|`)
 * Input/Output redirection
 * Background process execution (`&`)
 * Command history
